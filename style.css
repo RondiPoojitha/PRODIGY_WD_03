@@ -1,0 +1,122 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #e0c3fc, #8ec5fc);
+  color: #333;
+  text-align: center;
+  margin: 0;
+  padding: 2rem;
+  transition: background 0.5s, color 0.5s;
+}
+
+.dark {
+  background: linear-gradient(135deg, #2c3e50, #4ca1af);
+  color: #f0f0f0;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.mode-select button {
+  padding: 0.5rem 1rem;
+  margin: 0.5rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background: #6c5ce7;
+  color: white;
+  font-weight: bold;
+  transition: transform 0.2s;
+}
+
+.mode-select button:hover {
+  transform: scale(1.05);
+  background: #a29bfe;
+}
+
+.scoreboard {
+  margin: 1rem 0;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  grid-gap: 10px;
+  justify-content: center;
+  margin: 1rem auto;
+}
+
+.cell {
+  width: 100px;
+  height: 100px;
+  background: white;
+  font-size: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: background 0.3s, transform 0.2s;
+}
+
+.cell:hover {
+  background: #dfe6e9;
+  transform: scale(1.05);
+}
+
+.cell.X {
+  color: #e74c3c;
+}
+
+.cell.O {
+  color: #3498db;
+}
+
+.cell.win {
+  background: #ffeaa7;
+  animation: pulse 0.4s ease-in-out infinite alternate;
+}
+
+@keyframes pulse {
+  from { transform: scale(1); }
+  to { transform: scale(1.1); }
+}
+
+#status {
+  font-size: 1.5rem;
+  margin-top: 1rem;
+}
+
+button {
+  padding: 0.7rem 1.5rem;
+  border-radius: 8px;
+  border: none;
+  font-size: 1rem;
+  font-weight: bold;
+  background-color: #00cec9;
+  color: white;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #0984e3;
+}
+
+@media (max-width: 500px) {
+  .board {
+    grid-template-columns: repeat(3, 80px);
+    grid-gap: 8px;
+  }
+
+  .cell {
+    width: 80px;
+    height: 80px;
+    font-size: 2rem;
+  }
+}
